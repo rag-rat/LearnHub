@@ -1,4 +1,4 @@
-name: React Supabase CI/CD
+name: LearnHub CI/CD
 
 on:
   push:
@@ -26,15 +26,14 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
-        run: |
-          IMAGE=ghcr.io/${{ github.repository_owner }}/learnhub:latest
-
-          docker build \
-            --build-arg VITE_SUPABASE_URL="${{ secrets.VITE_SUPABASE_URL }}" \
-            --build-arg VITE_SUPABASE_ANON_KEY="${{ secrets.VITE_SUPABASE_ANON_KEY }}" \
-            -t $IMAGE .
-
-          docker push $IMAGE
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/learnhub:latest
+          build-args: |
+            VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}
+            VITE_SUPABASE_ANON_KEY=${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Trigger Render deployment
         run: curl -X POST "${{ secrets.RENDER_FRONTEND_DEPLOY_HOOK }}"
