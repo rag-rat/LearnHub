@@ -1,0 +1,161 @@
+
+:root {
+  --color-primary: #8e34ff;
+  --color-primary-dark: #7020e6;
+  --color-accent: #ceff90;
+
+  --color-card: #3a304a;
+  --color-muted: #cfcfcf;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-white: #fff;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  min-height: calc(100vh - 64px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 1rem;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  width: min(100%, 600px);
+
+  padding: 3.5rem 3rem;
+
+  background-color: var(--color-card);
+
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   SUCCESS ICON
+========================= */
+
+.icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 1.5rem;
+
+  border-radius: 50%;
+
+  background-color: var(--color-accent);
+  color: #222;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.card h1 {
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+.card p {
+  max-width: 480px;
+
+  margin: 1.25rem auto 0;
+
+  color: var(--color-muted);
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 2rem;
+
+  padding: 0.8rem 1.4rem;
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  border-radius: 7px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(142, 52, 255, 0.2);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .icon {
+    width: 56px;
+    height: 56px;
+
+    font-size: 1.7rem;
+  }
+
+  .card h1 {
+    font-size: 2rem;
+  }
+}

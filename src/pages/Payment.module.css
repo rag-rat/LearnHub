@@ -1,0 +1,102 @@
+
+:root {
+  --color-primary: #8e34ff;
+  --color-accent: #ceff90;
+
+  --color-muted: #cfcfcf;
+  --color-faint: #999;
+
+  --color-white: #fff;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.paymentPage {
+  min-height: calc(100vh - 64px);
+
+  padding: 4rem 1rem 6rem;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.heading h1 {
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+.heading p {
+  margin: 1rem 0 0;
+
+  color: var(--color-muted);
+
+  font-size: 1.05rem;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.errorPage {
+  max-width: 600px;
+
+  margin: 5rem auto;
+
+  padding: 3rem 2rem;
+
+  text-align: center;
+}
+
+.errorPage h1 {
+  margin: 0;
+
+  font-size: 2rem;
+}
+
+.errorPage p {
+  margin-top: 1rem;
+
+  color: var(--color-muted);
+
+  line-height: 1.6;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .paymentPage {
+    padding-top: 3rem;
+  }
+
+  .heading h1 {
+    font-size: 2.2rem;
+  }
+
+  .heading p {
+    font-size: 0.95rem;
+  }
+}

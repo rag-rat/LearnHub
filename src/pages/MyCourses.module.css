@@ -1,0 +1,288 @@
+.myCourses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.thumbnail {
+  width: 60%;
+  margin: auto;
+  display: block;
+  /* border: 2px solid red; */
+}
+.courseCard {
+  background-color: #3a304a;
+  padding: 1rem;
+  text-align: center;
+}
+.myCoursesPage {
+  max-width: 1400px;
+  width: 90%;
+  margin: 4rem auto;
+}
+.watchNowBtn {
+  background-color: #8e34ff;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  display: block;
+  border-radius: 5px;
+  margin: 1rem auto;
+  width: fit-content;
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (max-width: 640px) {
+  .myCourses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .myCourses {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* --------------- new one  */
+
+
+:root {
+  --color-primary: #8e34ff;
+  --color-primary-dark: #7020e6;
+  --color-accent: #ceff90;
+
+  --color-card: #3a304a;
+  --color-card-hover: #453a58;
+
+  --color-muted: #cfcfcf;
+  --color-faint: #999;
+
+  --color-white: #fff;
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.myCoursesPage {
+  max-width: 1100px;
+
+  width: calc(100% - 6rem);
+
+  margin: 0 auto;
+
+  padding: 5rem 0 6rem;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.myCoursesPage h1 {
+  margin: 0;
+
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+/* =========================
+   COURSES GRID
+========================= */
+
+.myCourses {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 2rem;
+
+  margin-top: 3rem;
+}
+
+/* =========================
+   COURSE CARD
+========================= */
+
+.courseCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem;
+
+  background-color: var(--color-card);
+
+  border: 1px solid transparent;
+  border-radius: 14px;
+
+  text-align: center;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.courseCard:hover {
+  background-color: var(--color-card-hover);
+
+  transform: translateY(-5px);
+
+  border-color: var(--color-border);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   THUMBNAIL
+========================= */
+
+.thumbnail {
+  display: block;
+
+  width: min(65%, 220px);
+  height: auto;
+
+  margin: 0 auto 1rem;
+}
+
+/* =========================
+   COURSE NAME
+========================= */
+
+.courseCard h2 {
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-size: 1.35rem;
+  line-height: 1.3;
+
+  font-weight: 600;
+}
+
+/* =========================
+   WATCH BUTTON
+========================= */
+
+.watchNowBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  margin-top: 1.5rem;
+
+  padding: 0.75rem 1.4rem;
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  border-radius: 7px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.watchNowBtn:hover {
+  background-color: var(--color-primary-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 18px rgba(142, 52, 255, 0.2);
+}
+
+.watchNowBtn:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .myCoursesPage {
+    width: calc(100% - 4rem);
+
+    padding-top: 4rem;
+  }
+
+  .myCourses {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .myCoursesPage {
+    width: calc(100% - 2rem);
+
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+
+  .myCoursesPage h1 {
+    font-size: 2.4rem;
+  }
+
+  .myCourses {
+    grid-template-columns: 1fr;
+
+    gap: 1.25rem;
+
+    margin-top: 2rem;
+  }
+
+  .courseCard {
+    padding: 1.5rem;
+  }
+
+  .thumbnail {
+    width: 55%;
+    max-width: 200px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+  .myCoursesPage {
+    width: calc(100% - 1.5rem);
+  }
+
+  .myCoursesPage h1 {
+    font-size: 2.1rem;
+  }
+
+  .courseCard {
+    padding: 1.25rem;
+  }
+
+  .watchNowBtn {
+    padding: 0.7rem 1.2rem;
+  }
+}

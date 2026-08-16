@@ -1,0 +1,139 @@
+:root {
+  --color-primary: #8e34ff;
+  --color-primary-dark: #7020e6;
+  --color-accent: #ceff90;
+
+  --color-card: #3a304a;
+  --color-muted: #cfcfcf;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --color-white: #fff;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.paymentForm {
+  width: min(100% - 2rem, 550px);
+
+  margin: 5rem auto;
+}
+
+/* =========================
+   CHECKOUT CARD
+========================= */
+
+.checkoutCard {
+  padding: 3rem;
+
+  background-color: var(--color-card);
+
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.checkoutCard h2 {
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.checkoutCard p {
+  margin: 1rem 0 0;
+
+  color: var(--color-muted);
+
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   PAY BUTTON
+========================= */
+
+.payButton {
+  width: 100%;
+
+  margin-top: 2rem;
+
+  padding: 0.9rem 1.5rem;
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 1.05rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.payButton:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(142, 52, 255, 0.25);
+}
+
+.payButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.payButton:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+  margin-top: 1.25rem;
+
+  padding: 0.85rem 1rem;
+
+  border-radius: 7px;
+
+  background-color: rgba(255, 255, 255, 0.05);
+
+  color: var(--color-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .paymentForm {
+    margin: 3rem auto;
+  }
+
+  .checkoutCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .checkoutCard h2 {
+    font-size: 1.7rem;
+  }
+}
